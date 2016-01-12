@@ -1,0 +1,1 @@
+"<test name=\"exampletest1\">  <classes>   <class name=\"com.rallydev.rest.client.HttpClientTest\" >   <methods>   <include name=\"shouldIntialize\"></include>   </methods>   </class>  </classes>  <parameter name="tcNumber" value="https://rally1.rallydev.com/slm/webservice/v2.0/testcase/49444359517"></parameter></test>"
