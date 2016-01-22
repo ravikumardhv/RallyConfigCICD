@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?> 
  <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" ><suite name="Suite1">
-<parameter name="workspaceRefNumber" value="/workspace/49443733649"/>
-<parameter name="projectRefNumber" value="/project/49443733733"/>
-<test name="exampletest1"> <parameter name="tcNumber" value="https://rally1.rallydev.com/slm/webservice/v2.0/testcase/49444359517"></parameter>  <classes>   <class name="com.prokarma.cicd.automation.SampleSauceIntegrationTest" >   <methods>   <include name="webDriver"></include>   </methods>   </class>  </classes> </test><test name="exampletest2"> <parameter name="tcNumber" value="https://rally1.rallydev.com/slm/webservice/v2.0/testcase/49786027305"></parameter><classes>   <class name="com.prokarma.cicd.automation.SampleSauceIntegrationTest">    <methods>     <include name="checkCanUserAddATask"></include>    </methods>   </class>  </classes> </test></suite>
+<parameter name="workspaceRefNumber" value="/workspace/50072165989"/>
+<parameter name="projectRefNumber" value="/project/50072166073"/>
+<test name="exampletest1"> <parameter name="tcNumber" value="https://rally1.rallydev.com/slm/webservice/v2.0/testcase/50072539631"></parameter>  <classes>   <class name="com.prokarma.cicd.automation.SampleSauceIntegrationTest" >   <methods>   <include name="checkPageTitle"></include>   </methods>   </class>  </classes> </test><test name="exampletest2"> <parameter name="tcNumber" value="https://rally1.rallydev.com/slm/webservice/v2.0/testcase/50182194569"></parameter>  <classes>   <class name="com.prokarma.cicd.automation.SampleSauceIntegrationTest" >   <methods>   <include name="checkCanUserAddATask"></include>   </methods>   </class>  </classes> </test></suite>

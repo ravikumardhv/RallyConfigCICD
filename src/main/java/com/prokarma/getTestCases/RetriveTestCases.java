@@ -97,6 +97,11 @@ public class RetriveTestCases {
 	 	        notes=notes.replaceAll("&lt;", "<");
 	 	        notes=notes.replaceAll("&gt;", ">");
 	 	        notes=notes.replaceAll("&nbsp;", "");
+	 	        notes=notes.replaceAll("</p>", "");
+	 	       notes=notes.replaceAll("</p>", "");
+	 	      notes=notes.replaceAll("</span>", "");
+	 	     notes=notes.replaceAll("<p class=\"MsoNormal\" style=\"vertical-align: baseline;\">", "");
+	 	    notes=notes.replaceAll("<span style=\"line-height: 15.7333px;\">", "");
 	 	        notes=notes.replaceFirst(">", "> <parameter name=\"tcNumber\" value="+_ref+"></parameter>");
 	 	        //notes=notes.replaceFirst("</test>", " <parameter name=\"tcNumber\" value="+_ref+"></parameter></test>");
 	 	       notes=notes.replaceFirst("\"", "");
