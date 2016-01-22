@@ -15,7 +15,7 @@ import com.rallydev.rest.response.CreateResponse;
 
 public class UpdateTestCaseResult {
 	private static String server = "https://rally1.rallydev.com";
-    private static  String userName = "mgadiraju@prokarma.com";
+    private static  String userName = "prokarmarally@gmail.com";
     private static String password = "Prokarma@123";
     
     private String workSpaceName="Prokarma";

@@ -18,7 +18,7 @@ import com.rallydev.rest.util.QueryFilter;
 public class RetriveTestCases {
 	
 	private static String server = "https://rally1.rallydev.com";
-    private static  String userName = "mgadiraju@prokarma.com";
+    private static  String userName = "prokarmarally@gmail.com";
     private static String password = "Prokarma@123";
     
     private String workSpaceName="Prokarma";
@@ -84,26 +84,32 @@ public class RetriveTestCases {
 		testCasesRequest.setQueryFilter(filter);*/
 		QueryResponse query = restApi.query(testCasesRequest);
 		JsonArray projectQueryResults = query.getResults();
-		System.out.println("projectQurey "+projectQueryResults);
 		StringBuffer sb=new StringBuffer();
 		for(int i=0;i<projectQueryResults.size();i++){
 			JsonElement jsonElement = projectQueryResults.get(i);
 			JsonObject jsonQueryObject = jsonElement.getAsJsonObject();
-	        System.out.println("test "+jsonQueryObject);
 	        String _ref = jsonQueryObject.get("_ref").toString();
 	        String notes = jsonQueryObject.get("Notes").toString();
-	        notes=notes.replaceAll("\\\\", "");
-	        notes=notes.replaceAll("<div>", "");
-	        notes=notes.replaceAll("</div>", "");
-	        notes=notes.replaceAll("&lt;", "<");
-	        notes=notes.replaceAll("&gt;", ">");
-	        notes=notes.replaceAll("&nbsp;", "");
-	        notes=notes.replaceFirst(">", "> <parameter name=\"tcNumber\" value="+_ref+"></parameter>");
-	        //notes=notes.replaceFirst("</test>", " <parameter name=\"tcNumber\" value="+_ref+"></parameter></test>");
-	        sb.append(notes);
+	        if(null!=notes && notes.length()>2 ){
+	        	 notes=notes.replaceAll("\\\\", "");
+	 	        notes=notes.replaceAll("<div>", "");
+	 	        notes=notes.replaceAll("</div>", "");
+	 	        notes=notes.replaceAll("&lt;", "<");
+	 	        notes=notes.replaceAll("&gt;", ">");
+	 	        notes=notes.replaceAll("&nbsp;", "");
+	 	        notes=notes.replaceFirst(">", "> <parameter name=\"tcNumber\" value="+_ref+"></parameter>");
+	 	        //notes=notes.replaceFirst("</test>", " <parameter name=\"tcNumber\" value="+_ref+"></parameter></test>");
+	 	       notes=notes.replaceFirst("\"", "");
+	 	      notes=notes.substring(0, notes.length()-1);
+	 	       sb.append(notes);
+	        }
+	       
+	       
 	       
 		}
-		return sb.toString();
+		String string = sb.toString();
+		System.out.println(string);
+		return string;
 		
 		
 	}
@@ -160,8 +166,7 @@ public class RetriveTestCases {
 	}
 	
 	private void addSuiteFile(String workSpaceRef,String prjectRef,String testCaseString) throws IOException{
-		testCaseString=testCaseString.replaceFirst("\"", "");
-		testCaseString=testCaseString.substring(0, testCaseString.length()-1);
+		
 		StringBuffer suite=new StringBuffer();
 		String suiteHead="<?xml version=\"1.0\" encoding=\"UTF-8\"?> "
 				+ "\n <!DOCTYPE suite SYSTEM \"http://testng.org/testng-1.0.dtd\" ><suite name=\"Suite1\">";
